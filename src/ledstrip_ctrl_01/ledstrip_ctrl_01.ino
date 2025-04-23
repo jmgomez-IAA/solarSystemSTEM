@@ -7,7 +7,11 @@
 * @param NUMPIXELS number of pixels to power on/off.
 * @param DELAYVAL time between led and led PowerOn.
 * @param INCREMENTO next led increment.
+* @param R Componente rojo
+* @param G Componente verde
+* @param B Componente azul
 * @note The program is designed by Arduino Uno with libs Adafruit_NeoPixel.
+* @note The 2 meter x 144 LEDS strip requires 2.5A@5V
 */
 
 #include <Adafruit_NeoPixel.h>
