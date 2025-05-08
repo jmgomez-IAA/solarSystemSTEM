@@ -72,3 +72,24 @@ El sistema solar es un conjunto de cuerpos astronómicos que giran directa o ind
 A continuación, puedes explorar Saturno en 3D con esta visualización interactiva proporcionada por la NASA: 
 
 [Haz clic aquí para explorar Saturno en 3D con NASA Eyes](https://eyes.nasa.gov/apps/solar-system/#/saturn)
+
+## Actividades
+
+           ☀️
+         [El Sol sonriente en el centro, grande]
+
+   🪐      🟠      🌍      🔴      🟡      🟣      🔵      🟢
+Mercurio  Venus  Tierra  Marte  Júpiter  Saturno  Urano  Neptuno
+
+[Los planetas pequeños alrededor del Sol, cada uno con su nombre debajo y espacio para colorear]
+
+-----------------------------
+
+      🌈
+[Un arcoíris grande y sencillo en una esquina para colorear]
+
+-----------------------------
+
+  Dibuja aquí tu planeta favorito:
+  ______________________________
+
