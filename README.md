@@ -137,6 +137,10 @@ Mercurio  Venus  Tierra  Marte  Júpiter  Saturno  Urano  Neptuno
   Dibuja aquí tu planeta favorito:
   ______________________________
 
+
+![imagen](https://github.com/user-attachments/assets/bc1de1e7-72dc-4c6d-ac00-e43d8c614a47)
+
+
 ## ¿Que es la luz?: “La Carrera de la Luz”
 
 La luz es una forma de radiación electromagnética que puede ser percibida por el ojo humano, y cuya frecuencia determina su color. Se comporta simultáneamente como una onda electromagnética y como un conjunto de partículas llamadas fotones, que no tienen masa
