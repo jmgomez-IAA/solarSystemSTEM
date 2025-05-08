@@ -53,13 +53,22 @@ Consejos para la clase
  
 ¿Quieres que te prepare también una ficha con dibujos o una canción para acompañar esta clase?
 
+## El Sistema Solar
 
-## Los planetas
+El sistema solar es un conjunto de cuerpos astronómicos que giran directa o indirectamente en órbita alrededor de una única estrella, el Sol, que concentra el 99,86 % de la masa total del sistema. Se formó hace aproximadamente 4,600 millones de años a partir del colapso de una nube molecular, dando origen a un disco protoplanetario del que surgieron los planetas y otros cuerpos.
 
-## 🌌 Visualización interactiva del sistema solar
+### El Sol
+
+### Los planetas
+
+🌌 Visualización interactiva del sistema solar
 
 [Haz clic aquí para explorar el sistema solar en 3D con NASA Eyes](https://eyes.nasa.gov/apps/solar-system/#/home)
 
-### Saturno
+#### Saturno: El gigante de los anillos
+
+ Saturno es el sexto planeta del Sistema Solar y el segundo más grande después de Júpiter. Es conocido por su espectacular sistema de anillos, compuesto por partículas de hielo y roca que orbitan el planeta. Este gigante gaseoso está compuesto principalmente de hidrógeno y helio, y tiene al menos 145 lunas conocidas, incluyendo Titán, una de las lunas más grandes del sistema solar.
+
+A continuación, puedes explorar Saturno en 3D con esta visualización interactiva proporcionada por la NASA: 
 
 [Haz clic aquí para explorar Saturno en 3D con NASA Eyes](https://eyes.nasa.gov/apps/solar-system/#/saturn)
