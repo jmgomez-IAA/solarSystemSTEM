@@ -58,6 +58,8 @@ Consejos para la clase
 
 ## 🌌 Visualización interactiva del sistema solar
 
-[Haz clic aquí para explorar Saturno en 3D con NASA Eyes](https://eyes.nasa.gov/apps/solar-system/#/saturn)
+[Haz clic aquí para explorar el sistema solar en 3D con NASA Eyes](https://eyes.nasa.gov/apps/solar-system/#/home)
 
 ### Saturno
+
+[Haz clic aquí para explorar Saturno en 3D con NASA Eyes](https://eyes.nasa.gov/apps/solar-system/#/saturn)
