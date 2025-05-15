@@ -18,6 +18,11 @@
 #define MAXLEDS 288
 //Designamos nuestro pin de datos
 #define PIN 6
+
+int sensorPin = A0;
+int ledPin = 13;      // select the pin for the LED
+int sensorValue = 0;  // variable to store the value coming from the sensor
+
 //Designamos cuantos pixeles tenemos en nuestra cinta led RGB
 #define NUMPIXELS      MAXLEDS
 // Color del LED
@@ -25,19 +30,98 @@
 #define G 150
 #define B 0
 
-const double light_speed = 300000;  //km/s
-const double un_km = 149597870; // km
-float astros_distance_cm[] = {2.6, 4.8, 6.7, 10.1, 34.7, 63.6, 127.9, 200};
-int tiempos_planetas[] = {3, 6, 8, 12, 43, 79, 159, 250, 328};
+typedef struct led_color_t {
+  float distancia_ua;
+}led_color_t;
 
-
+led_color_t led_status[MAXLEDS];
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 #define DELAYVAL 1000 // Time (in milliseconds) to pause between pixels
+#define MAXSIMULATION_TIME 300 // Minutos de simulation.
+
+#define SUN     287
+#define NEPTUNO 38
+#define NEPTUNO_DIST 30
+#define URANO 65
+#define URANO_DIST 19
+#define SATURNO 103
+#define SATURNO_DIST 9.5
+#define JUPITER 117
+#define JUPITER_DIST 5.2
+#define MARTE 175
+#define MARTE_DIST 1.5
+#define TIERRA 189
+#define TIERRA_DIST 1
+#define VENUS 226
+#define VENUS_DIST 0.7
+#define MERCURIO 235
+#define MERCURIO_DIST 0.4
+
+//La Luz recorre 1ua en 500 segundos
+float velocidad_desplazamiento;
+float distancia_recorrida;
+uint32_t t;
 
 void setup() {
   // put your setup code here, to run once:
-  pixels.begin(); 
+  // declare the ledPin as an OUTPUT:
+  pinMode(ledPin, OUTPUT);
+
+  pixels.begin();
+
+  //La Luz recorre 1ua en 500 segundos
+  velocidad_desplazamiento = 1.0 / 500; //Velocidad en 0.002 ua/s
+  distancia_recorrida = 0;  // En unidades astronomicas con 1 decimal o 2.
+  t= 0; // simulation time.
+
+  // Prepare the Look-Up table for pixels distance
+  for (int i = 0; i < MAXLEDS; i ++)
+  {
+    if ( i <= NEPTUNO){
+      led_status[i].distancia_ua = (SUN - i ) * NEPTUNO_DIST / (SUN - NEPTUNO);
+      continue;
+    }
+
+    if ( i <= URANO){
+      led_status[i].distancia_ua = (SUN - i ) * URANO_DIST / (SUN - URANO);
+      continue;
+    }
+
+    if ( i <= SATURNO){
+      led_status[i].distancia_ua = (SUN - i ) * SATURNO_DIST / (SUN - SATURNO);
+      continue;
+    }
+
+    if ( i <= JUPITER){
+      led_status[i].distancia_ua = (SUN - i ) * JUPITER_DIST / (SUN - JUPITER);
+      continue;
+    }
+
+    if ( i <= MARTE){
+      led_status[i].distancia_ua = (SUN - i ) * MARTE_DIST / (SUN - MARTE);
+      continue;
+    }
+
+    if ( i <= TIERRA){
+      led_status[i].distancia_ua = (SUN - i ) * TIERRA_DIST / (SUN - TIERRA);
+      continue;
+    }
+
+    if ( i <= VENUS){
+      led_status[i].distancia_ua = (SUN - i ) * VENUS_DIST / (SUN - VENUS);
+      continue;
+    }
+
+    if ( i <= MERCURIO){
+      led_status[i].distancia_ua = (SUN - i ) * MERCURIO_DIST / (SUN - MERCURIO);
+      continue;
+    }
+
+
+    led_status[i].distancia_ua = 0;
+
+  }
 }
 
 void loop() {
@@ -46,42 +130,37 @@ void loop() {
   // put your main code here, to run repeatedly:
   pixels.clear(); // Set all pixel colors to 'off'
 
-  for( int time = 0; time < NUMPIXELS; time ++)  // 360 seguntos = 6 minutos
-  {
-    switch( time )
+// Main simulation
+  while ( distancia_recorrida <  32){
+      // read the value from the sensor:
+    sensorValue = analogRead(sensorPin);
+    // turn the ledPin on
+    digitalWrite(ledPin, HIGH);
+
+    distancia_recorrida = t * (velocidad_desplazamiento);
+    // Vamos a ir cambiando la velocidad de desplazamiento 
+    // cuando lleguemos al planeta.
+
+    for( int led = 0; led < NUMPIXELS; led ++)  // Actualizamos el estado de los leds.
     {
-      case 3:   // Mercurio
-          pixels.setPixelColor(72+72+72+19, pixels.Color(250, 0, 0));
-        break;
-      case 6:   // Venus
-          pixels.setPixelColor(72+72+72+10, pixels.Color(250, 0, 0));
-        break;
-      case 8:   // Tierra
-          pixels.setPixelColor(72+72+45, pixels.Color(250, 0, 0));
-        break;
-      case 12:   // Marte
-          pixels.setPixelColor(72+72+31, pixels.Color(250, 0, 0));
-        break;
-      case 43:   // Jupiter
-          pixels.setPixelColor(72+45, pixels.Color(250, 0, 0));
-        break;
-      case 79:   // Saturno
-          pixels.setPixelColor(72+31, pixels.Color(250, 0, 0));
-        break;
-      case 160:   // Urano
-          pixels.setPixelColor(65, pixels.Color(250, 0, 0));
-        break;
-      case 250:   // Neptuno
-          pixels.setPixelColor(38, pixels.Color(250, 0, 0));
-        break;
-      default:
-          pixels.setPixelColor(NUMPIXELS-time, pixels.Color(0, 125, 2));
+      if (led_status[led].distancia_ua <=  distancia_recorrida)
+        if ( (led == MERCURIO) || (led == VENUS) || (led == TIERRA) || (led == MARTE) ||
+          (led == JUPITER) || (led == SATURNO) || (led == URANO) || (led == NEPTUNO) )
+                pixels.setPixelColor(led, pixels.Color(0, 128, 32));
+        else
+                pixels.setPixelColor(led, pixels.Color(255, 0, 0));
+
     }
 
+
+    // Siguiente iteracion
+    t++;
     pixels.show();   // Send the updated pixel colors to the hardware.
-
-    delay(DELAYVAL); // Pause before next pass through loop
-
+    delay(DELAYVAL-sensorValue); // Pause before next pass through loop
+      // turn the ledPin off:
+    digitalWrite(ledPin, LOW);
   }
+
+  distancia_recorrida = 0;        
 
 }

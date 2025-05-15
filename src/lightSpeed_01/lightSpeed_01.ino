@@ -34,7 +34,7 @@ int tiempos_planetas[] = {3, 6, 8, 12, 43, 79, 159, 250, 328};
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-#define DELAYVAL 1000 // Time (in milliseconds) to pause between pixels
+#define DELAYVAL 100 // Time (in milliseconds) to pause between pixels
 
 void setup() {
   // put your setup code here, to run once:
