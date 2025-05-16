@@ -180,3 +180,7 @@ La luz tarda diferentes tiempos en alcanzar cada planeta del sistema solar desde
     Neptuno: cerca de 250 minutos (4,16 horas)
 
 Además, para el planeta enano Plutón, la luz tarda unos 328 minutos, es decir, alrededor de 5,5 horas en llegar desde el So
+
+# Bibliografia
+
+Stepper motor y arduino: https://howtomechatronics.com/tutorials/arduino/stepper-motors-and-arduino-the-ultimate-guide/
