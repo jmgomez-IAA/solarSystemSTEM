@@ -184,3 +184,7 @@ Además, para el planeta enano Plutón, la luz tarda unos 328 minutos, es decir,
 # Bibliografia
 
 Stepper motor y arduino: https://howtomechatronics.com/tutorials/arduino/stepper-motors-and-arduino-the-ultimate-guide/
+
+Guiones de Actividades programas para niños sobre astronomia
+http://sac.csic.es/unawe/actividades_universo.html
+
