@@ -117,6 +117,8 @@ A continuación, puedes explorar Saturno en 3D con esta visualización interacti
 
 [Haz clic aquí para explorar Saturno en 3D con NASA Eyes](https://eyes.nasa.gov/apps/solar-system/#/saturn)
 
+Podemos ver las imagenes capturadas por los rovers en MARTE:
+[Virtual Mars Traverse: Every inch of Curiosity rover's path since 2012 landing](https://www.rovers.land/)
 
 ## Actividades
 
